@@ -3,7 +3,6 @@ Python sets - actions
 """
 
 weekdays = {'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'}
-
 sport_days = {'Sun', 'Wed'}
 lecture_days = {'Mon', 'Wed', 'Fri'}
 

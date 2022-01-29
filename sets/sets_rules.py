@@ -1,7 +1,7 @@
-# Python sets - rules
+# Python sets - properties
 
 """
-Rule #1 - No duplicates
+Property 1 - Uniqueness
 """
 
 # Rainy months from multiple years
@@ -9,36 +9,37 @@ rainy_months_list = [
     'Jan', 'Feb', 'Dec', 'Mar',
     'Nov', 'Dec', 'Feb',
     'Jan', 'Feb', 'Dec']
-print(f"\nRainy months list "
-      f"(total {len(rainy_months_list)}):"
-      f"\n{rainy_months_list}")
+print(f"""
+Total {len(rainy_months_list)} rainy months in list: {rainy_months_list}
+""")
 
-# Getting unique months with rainfall
+# Getting unique months with rainfall by initializing set from the list above
 rainy_months_set = set(rainy_months_list)
-print(f"\nUnique rainy months "
-      f"(total {len(rainy_months_set)}):"
-      f"{rainy_months_set}")
+print(f"""
+Total {len(rainy_months_set)} UNIQUE rainy months in set: {rainy_months_set}
+""")
 
 # An attempt to add already existing element to the set
 # will not change it
-print(f"\nAdding Mar to the set...")
+print(f"Adding Dec to the set...")
 rainy_months_set.add('Dec')
-print(f"\nUnique rainy months "
-      f"(total {len(rainy_months_set)}):"
-      f"{rainy_months_set}")
+print(f"""
+The set did not change, as expected.
+Total {len(rainy_months_set)} UNIQUE rainy months in set: {rainy_months_set}
+""")
 
 """
-Rule #2 - No order
+Property #2 - Absence of order
 # """
 # An attempt to get set element at specific index
 # will raise an exception
 print(f"\nTrying to access set element by index...")
 try:
     rainy_months_set[0]
-except Exception as e:
-    print(f"\nError: {e}")
+except TypeError as e:
+    print(f"Error:{e}")
 
-# Instead, you can iterate over set
+# But, you can iterate over set
 print(f"Iterating over set...")
-for month in rainy_months_set:
+for i, month in enumerate(rainy_months_set):
     print(f"{month}")
